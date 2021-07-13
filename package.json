@@ -1,0 +1,11 @@
+{
+  "name": "home-assistant",
+  "version": "1.0.0",
+  "repository": "https://github.com/chitly/home-assistant.git",
+  "author": "Nattapong Ousirimaneechai <chai-best@hotmail.com>",
+  "license": "Apache License 2.0",
+  "scripts": {
+    "up": "docker-compose up --build",
+    "down": "docker-compose down --volumes"
+  }
+}
