@@ -1,5 +1,12 @@
 *.log
+*.db-shm
+*.db-wal
+*.db
+
 .cloud
 .storage
-secrets.yaml
+
 deps
+tts
+
+secrets.yaml
