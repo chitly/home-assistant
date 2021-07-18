@@ -1,3 +1,10 @@
+homeassistant:
+  name: First Home
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: !secret elevation
+  unit_system: metric
+  time_zone: Asia/Bangkok
 
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:

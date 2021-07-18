@@ -1,14 +1,28 @@
-version: '3'
+version: "3"
 
 services:
   home-assistant:
-    container_name: home-assistant
     image: homeassistant/home-assistant:stable
+    container_name: home-assistant
+    restart: unless-stopped
+    ports:
+      - 8123:8123
+    privileged: true
     volumes:
       - ./config:/config
     environment:
       - TZ=Asia/Bangkok
+
+  mqtt:
+    image: eclipse-mosquitto:2.0
+    container_name: mqtt
+    restart: always
     ports:
-      - 8123:8123
-    restart: unless-stopped
-    privileged: true
+      - 1883:1883
+      - 9001:9001
+    volumes:
+      - ./mqtt/data:/mosquitto/data
+      - ./mqtt/config:/mosquitto/config
+      - ./mqtt/log:/mosquitto/log
+    environment:
+      - TZ=Asia/Bangkok
